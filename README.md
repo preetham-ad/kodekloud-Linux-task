@@ -25,10 +25,10 @@ sudo apt update
 sudo apt install ansible
 `code`
 ### For Red hat-based systems(CentOS, Fedora)
-```bash
+`bash
 sudo yum install epel-release
 sudo yum install ansible
-```code
+`code`
 ### 3.Create the Inventory File
 The inventory file defines your hosts and their connection details. Create a file named inventory.ini with the following content:
 
