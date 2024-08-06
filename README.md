@@ -28,7 +28,7 @@ sudo apt install ansible
 ```bash
 sudo yum install epel-release
 sudo yum install ansible
-
+`code`
 ### 3.Create the Inventory File
 The inventory file defines your hosts and their connection details. Create a file named inventory.ini with the following content:
 
