@@ -23,12 +23,12 @@ To install Ansible, follow these instructions based on your operating system.
 ````bash
 sudo apt update
 sudo apt install ansible
-
+```code
 ### For Red hat-based systems(CentOS, Fedora)
 ```bash
 sudo yum install epel-release
 sudo yum install ansible
-
+```code
 ### 3.Create the Inventory File
 The inventory file defines your hosts and their connection details. Create a file named inventory.ini with the following content:
 
@@ -43,7 +43,7 @@ stapp03 ansible_host=172.16.238.12 ansible_user=banner ansible_ssh_pass=BigGr33n
 [app_servers:vars]
 ansible_connection=ssh
 ansible_become=True
-
+```code
 ansible_ssh_pass: The SSH password for connecting to the server.
 ansible_become_pass: The sudo password (same as the SSH password in this setup).
 
@@ -70,14 +70,14 @@ Copy code
         state: present
         groups: nautilus_sftp_users
         append: yes
-
+```code
 #### 5.Running the Playbook
 Execute the playbook with the following command:
 
 ```bash
 Copy code
 ansible-playbook -i inventory.ini user_group.yml
-
+```code
 ##### 6. Troubleshooting
 If you encounter issues, here’s how to address common problems:
 
@@ -100,7 +100,7 @@ ini
 code
 [defaults]
 host_key_checking = False
-
+```code
 ##### 7. Verifying Changes
 To ensure the changes were applied correctly, SSH into each server and perform the following checks:
 
