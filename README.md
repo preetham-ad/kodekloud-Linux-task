@@ -28,7 +28,7 @@ sudo apt install ansible
 sudo yum install epel-release
 sudo yum install ansible
 
-###Create the Inventory File
+### 3.Create the Inventory File
 The inventory file defines your hosts and their connection details. Create a file named inventory.ini with the following content:
 
 inventory.ini
@@ -47,7 +47,7 @@ ansible_become=True
 ansible_ssh_pass: The SSH password for connecting to the server.
 ansible_become_pass: The sudo password (same as the SSH password in this setup).
 
-###3. Write the Ansible Playbook
+###4. Write the Ansible Playbook
 Create a playbook file named user_group.yml with the following content:
 
 user_group.yml
@@ -77,5 +77,42 @@ Execute the playbook with the following command:
 bash
 Copy code
 ansible-playbook -i inventory.ini user_group.yml
+
+### 5. Troubleshooting
+If you encounter issues, here’s how to address common problems:
+
+Error: Missing sudo password
+Ensure that:
+
+The ansible_become_pass is correctly set in your inventory file.
+The user has sudo privileges and does not require a separate password for sudo operations.
+Error: SSH password not set
+Verify:
+
+SSH passwords are correctly configured in the inventory.ini file.
+The SSH user has appropriate permissions to connect and execute commands.
+Error: Host Key Checking
+If you encounter issues related to host key checking, you can disable it in your ansible.cfg file:
+
+ansible.cfg
+
+ini
+Copy code
+[defaults]
+host_key_checking = False
+
+###6. Verifying Changes
+To ensure the changes were applied correctly, SSH into each server and perform the following checks:
+
+Verify Group:
+
+bash
+Copy code
+grep nautilus_sftp_users /etc/group
+Verify User:
+
+bash
+Copy code
+id stark
 
 
