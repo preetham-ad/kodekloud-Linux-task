@@ -20,10 +20,10 @@ To install Ansible, follow these instructions based on your operating system.
 
 #### For Debian-based Systems (e.g., Ubuntu)
 
-````bash
+`bash`
 sudo apt update
 sudo apt install ansible
-```code
+`code`
 ### For Red hat-based systems(CentOS, Fedora)
 ```bash
 sudo yum install epel-release
