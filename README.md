@@ -106,14 +106,12 @@ To ensure the changes were applied correctly, SSH into each server and perform t
 
 Verify Group:
 
-bash
-Copy code
+```bash
 grep nautilus_sftp_users /etc/group
+```
 Verify User:
-
-bash
-Copy code
+```bash
 id stark 
-
+```
 
 
